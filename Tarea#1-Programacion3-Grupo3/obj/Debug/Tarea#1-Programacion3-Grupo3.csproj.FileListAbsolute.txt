@@ -1,0 +1,7 @@
+C:\Users\chris\Desktop\Tarea#1-Programacion3-Grupo3\bin\Debug\Tarea#1-Programacion3-Grupo3.exe.config
+C:\Users\chris\Desktop\Tarea#1-Programacion3-Grupo3\bin\Debug\Tarea#1-Programacion3-Grupo3.exe
+C:\Users\chris\Desktop\Tarea#1-Programacion3-Grupo3\bin\Debug\Tarea#1-Programacion3-Grupo3.pdb
+C:\Users\chris\Desktop\Tarea#1-Programacion3-Grupo3\obj\Debug\Tarea#1-Programacion3-Grupo3.csproj.AssemblyReference.cache
+C:\Users\chris\Desktop\Tarea#1-Programacion3-Grupo3\obj\Debug\Tarea#1-Programacion3-Grupo3.csproj.CoreCompileInputs.cache
+C:\Users\chris\Desktop\Tarea#1-Programacion3-Grupo3\obj\Debug\Tarea#1-Programacion3-Grupo3.exe
+C:\Users\chris\Desktop\Tarea#1-Programacion3-Grupo3\obj\Debug\Tarea#1-Programacion3-Grupo3.pdb
