@@ -1,0 +1,16 @@
+# Visual Studio
+**/.vs/
+
+# Archivos de compilación
+**/bin/
+**/obj/
+
+# Archivos locales de Visual Studio
+*.user
+*.suo
+
+# Resultados de pruebas
+**/TestResults/
+
+# Paquetes
+**/packages/
