@@ -44,12 +44,10 @@ namespace AlquilerVehiculos
 
             dgvRoles.DataSource = dt;
 
-            dgvRoles.AutoSizeColumnsMode =
-                DataGridViewAutoSizeColumnsMode.Fill;
+            dgvRoles.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             dgvRoles.ReadOnly = true;
-            dgvRoles.SelectionMode =
-                DataGridViewSelectionMode.FullRowSelect;
+            dgvRoles.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -69,19 +67,44 @@ namespace AlquilerVehiculos
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Rol rol = new Rol();
-            rol.NombreRol = txtNombreRol.Text;
-            rol.Descripcion = txtDescripcion.Text;
-            rol.FechaCreacion = DateTime.Now;
+            try
+            {
+                Rol rol = new Rol();
+                rol.NombreRol = txtNombreRol.Text;
+                rol.Descripcion = txtDescripcion.Text;
+                rol.FechaCreacion = DateTime.Now;
+
+                bool resultado = false;
+                resultado = InsertarRol(rol);
+                if (resultado)
+                {
+                    MessageBox.Show("Rol " + rol.NombreRol + " insertado correctamente");
+                    CargarRoles();
+                }
+                else
+                {
+                    MessageBox.Show("Error al insertar el rol " + rol.NombreRol);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.Message);
+            }
+        }
+
+        public bool InsertarRol(Rol rol)
+        {
+            
             int resultado = 0;
             resultado = rolAD.Insertar(rol);
-            if(resultado > 0)
+            if (resultado > 0)
             {
-                MessageBox.Show("Rol "+ rol.NombreRol +" insertado correctamente");
+                return true;
             }
             else
             {
-                MessageBox.Show("Error al insertar el rol " + rol.NombreRol);
+                return false;
             }
         }
     }

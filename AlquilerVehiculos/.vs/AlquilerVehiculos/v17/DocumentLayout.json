@@ -3,12 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DD7398EA-071B-4D6B-9478-6106065B6C92}|AlquilerVehiculos\\AlquilerVehiculos.csproj|c:\\users\\sandr\\documents\\github\\curso_progra3\\curso_progra3_2026\\alquilervehiculos\\alquilervehiculos\\datos\\rolad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DD7398EA-071B-4D6B-9478-6106065B6C92}|AlquilerVehiculos\\AlquilerVehiculos.csproj|solutionrelative:alquilervehiculos\\datos\\rolad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DD7398EA-071B-4D6B-9478-6106065B6C92}|AlquilerVehiculos\\AlquilerVehiculos.csproj|C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\alquilervehiculos\\views\\frmusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DD7398EA-071B-4D6B-9478-6106065B6C92}|AlquilerVehiculos\\AlquilerVehiculos.csproj|solutionrelative:alquilervehiculos\\views\\frmusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD7398EA-071B-4D6B-9478-6106065B6C92}|AlquilerVehiculos\\AlquilerVehiculos.csproj|C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\alquilervehiculos\\views\\frmusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DD7398EA-071B-4D6B-9478-6106065B6C92}|AlquilerVehiculos\\AlquilerVehiculos.csproj|solutionrelative:alquilervehiculos\\views\\frmusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DD7398EA-071B-4D6B-9478-6106065B6C92}|AlquilerVehiculos\\AlquilerVehiculos.csproj|c:\\users\\sandr\\documents\\github\\curso_progra3\\curso_progra3_2026\\alquilervehiculos\\alquilervehiculos\\views\\frmroles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DD7398EA-071B-4D6B-9478-6106065B6C92}|AlquilerVehiculos\\AlquilerVehiculos.csproj|solutionrelative:alquilervehiculos\\views\\frmroles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD7398EA-071B-4D6B-9478-6106065B6C92}|AlquilerVehiculos\\AlquilerVehiculos.csproj|C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\alquilervehiculos\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DD7398EA-071B-4D6B-9478-6106065B6C92}|AlquilerVehiculos\\AlquilerVehiculos.csproj|solutionrelative:alquilervehiculos\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD7398EA-071B-4D6B-9478-6106065B6C92}|AlquilerVehiculos\\AlquilerVehiculos.csproj|c:\\users\\sandr\\documents\\github\\curso_progra3\\curso_progra3_2026\\alquilervehiculos\\alquilervehiculos\\datos\\usuarioad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DD7398EA-071B-4D6B-9478-6106065B6C92}|AlquilerVehiculos\\AlquilerVehiculos.csproj|solutionrelative:alquilervehiculos\\datos\\usuarioad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD7398EA-071B-4D6B-9478-6106065B6C92}|AlquilerVehiculos\\AlquilerVehiculos.csproj|C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\alquilervehiculos\\views\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DD7398EA-071B-4D6B-9478-6106065B6C92}|AlquilerVehiculos\\AlquilerVehiculos.csproj|solutionrelative:alquilervehiculos\\views\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD7398EA-071B-4D6B-9478-6106065B6C92}|AlquilerVehiculos\\AlquilerVehiculos.csproj|c:\\users\\sandr\\documents\\github\\curso_progra3\\curso_progra3_2026\\alquilervehiculos\\alquilervehiculos\\datos\\rolad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DD7398EA-071B-4D6B-9478-6106065B6C92}|AlquilerVehiculos\\AlquilerVehiculos.csproj|solutionrelative:alquilervehiculos\\datos\\rolad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DD7398EA-071B-4D6B-9478-6106065B6C92}|AlquilerVehiculos\\AlquilerVehiculos.csproj|C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\alquilervehiculos\\models\\rol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -31,16 +51,8 @@
       "RelativeMoniker": "D:0:0:{DD7398EA-071B-4D6B-9478-6106065B6C92}|AlquilerVehiculos\\AlquilerVehiculos.csproj|solutionrelative:alquilervehiculos\\models\\vehiculo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DD7398EA-071B-4D6B-9478-6106065B6C92}|AlquilerVehiculos\\AlquilerVehiculos.csproj|C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\alquilervehiculos\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DD7398EA-071B-4D6B-9478-6106065B6C92}|AlquilerVehiculos\\AlquilerVehiculos.csproj|solutionrelative:alquilervehiculos\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DD7398EA-071B-4D6B-9478-6106065B6C92}|AlquilerVehiculos\\AlquilerVehiculos.csproj|C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\alquilervehiculos\\views\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{DD7398EA-071B-4D6B-9478-6106065B6C92}|AlquilerVehiculos\\AlquilerVehiculos.csproj|solutionrelative:alquilervehiculos\\views\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DD7398EA-071B-4D6B-9478-6106065B6C92}|AlquilerVehiculos\\AlquilerVehiculos.csproj|C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\alquilervehiculos\\views\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DD7398EA-071B-4D6B-9478-6106065B6C92}|AlquilerVehiculos\\AlquilerVehiculos.csproj|solutionrelative:alquilervehiculos\\views\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DD7398EA-071B-4D6B-9478-6106065B6C92}|AlquilerVehiculos\\AlquilerVehiculos.csproj|C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\alquilervehiculos\\views\\frmroles.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -49,10 +61,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{DD7398EA-071B-4D6B-9478-6106065B6C92}|AlquilerVehiculos\\AlquilerVehiculos.csproj|C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\alquilervehiculos\\views\\frmclasificacionvehiculos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{DD7398EA-071B-4D6B-9478-6106065B6C92}|AlquilerVehiculos\\AlquilerVehiculos.csproj|solutionrelative:alquilervehiculos\\views\\frmclasificacionvehiculos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DD7398EA-071B-4D6B-9478-6106065B6C92}|AlquilerVehiculos\\AlquilerVehiculos.csproj|C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\alquilervehiculos\\views\\frmusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{DD7398EA-071B-4D6B-9478-6106065B6C92}|AlquilerVehiculos\\AlquilerVehiculos.csproj|solutionrelative:alquilervehiculos\\views\\frmusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DD7398EA-071B-4D6B-9478-6106065B6C92}|AlquilerVehiculos\\AlquilerVehiculos.csproj|C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\alquilervehiculos\\views\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -65,10 +73,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{DD7398EA-071B-4D6B-9478-6106065B6C92}|AlquilerVehiculos\\AlquilerVehiculos.csproj|C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\alquilervehiculos\\views\\frmclasificacionvehiculos.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DD7398EA-071B-4D6B-9478-6106065B6C92}|AlquilerVehiculos\\AlquilerVehiculos.csproj|solutionrelative:alquilervehiculos\\views\\frmclasificacionvehiculos.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DD7398EA-071B-4D6B-9478-6106065B6C92}|AlquilerVehiculos\\AlquilerVehiculos.csproj|C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\alquilervehiculos\\views\\frmusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DD7398EA-071B-4D6B-9478-6106065B6C92}|AlquilerVehiculos\\AlquilerVehiculos.csproj|solutionrelative:alquilervehiculos\\views\\frmusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DD7398EA-071B-4D6B-9478-6106065B6C92}|AlquilerVehiculos\\AlquilerVehiculos.csproj|C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\alquilervehiculos\\views\\frmusuarios.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -102,71 +106,63 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
+              "Title": "UsuarioAD.cs",
+              "DocumentMoniker": "C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\AlquilerVehiculos\\Datos\\UsuarioAD.cs",
+              "RelativeDocumentMoniker": "AlquilerVehiculos\\Datos\\UsuarioAD.cs",
+              "ToolTip": "C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\AlquilerVehiculos\\Datos\\UsuarioAD.cs",
+              "RelativeToolTip": "AlquilerVehiculos\\Datos\\UsuarioAD.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAqwCUAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-13T19:41:04.216Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "FrmRoles.cs",
               "DocumentMoniker": "C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\AlquilerVehiculos\\Views\\FrmRoles.cs",
               "RelativeDocumentMoniker": "AlquilerVehiculos\\Views\\FrmRoles.cs",
               "ToolTip": "C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\AlquilerVehiculos\\Views\\FrmRoles.cs",
               "RelativeToolTip": "AlquilerVehiculos\\Views\\FrmRoles.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAAAgwEcAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAADgAAAAAAAAAAAAgwEAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-13T19:01:34.876Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "RolAD.cs",
               "DocumentMoniker": "C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\AlquilerVehiculos\\Datos\\RolAD.cs",
               "RelativeDocumentMoniker": "AlquilerVehiculos\\Datos\\RolAD.cs",
               "ToolTip": "C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\AlquilerVehiculos\\Datos\\RolAD.cs",
               "RelativeToolTip": "AlquilerVehiculos\\Datos\\RolAD.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAAwEcAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-13T18:59:12.151Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "FrmLogin.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\AlquilerVehiculos\\Views\\FrmLogin.cs",
-              "RelativeDocumentMoniker": "AlquilerVehiculos\\Views\\FrmLogin.cs",
-              "ToolTip": "C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\AlquilerVehiculos\\Views\\FrmLogin.cs [Dise\u00F1o]",
-              "RelativeToolTip": "AlquilerVehiculos\\Views\\FrmLogin.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-26T15:00:28.624Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "FrmPrincipal.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\AlquilerVehiculos\\Views\\FrmPrincipal.cs",
-              "RelativeDocumentMoniker": "AlquilerVehiculos\\Views\\FrmPrincipal.cs",
-              "ToolTip": "C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\AlquilerVehiculos\\Views\\FrmPrincipal.cs [Dise\u00F1o]",
-              "RelativeToolTip": "AlquilerVehiculos\\Views\\FrmPrincipal.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-13T01:35:24.342Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 5,
               "Title": "FrmPrincipal.cs",
               "DocumentMoniker": "C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\AlquilerVehiculos\\Views\\FrmPrincipal.cs",
               "RelativeDocumentMoniker": "AlquilerVehiculos\\Views\\FrmPrincipal.cs",
               "ToolTip": "C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\AlquilerVehiculos\\Views\\FrmPrincipal.cs",
               "RelativeToolTip": "AlquilerVehiculos\\Views\\FrmPrincipal.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAA9wDEAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAABcAAAAAAAAAAAAAACUAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-13T14:55:01.855Z"
+              "WhenOpened": "2026-10-13T14:55:01.855Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "Rol.cs",
               "DocumentMoniker": "C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\AlquilerVehiculos\\Models\\Rol.cs",
               "RelativeDocumentMoniker": "AlquilerVehiculos\\Models\\Rol.cs",
@@ -179,7 +175,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "ConexionDB.cs",
               "DocumentMoniker": "C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\AlquilerVehiculos\\Utilities\\ConexionDB.cs",
               "RelativeDocumentMoniker": "AlquilerVehiculos\\Utilities\\ConexionDB.cs",
@@ -192,7 +188,68 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FrmUsuarios.cs",
+              "DocumentMoniker": "C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\AlquilerVehiculos\\Views\\FrmUsuarios.cs",
+              "RelativeDocumentMoniker": "AlquilerVehiculos\\Views\\FrmUsuarios.cs",
+              "ToolTip": "C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\AlquilerVehiculos\\Views\\FrmUsuarios.cs",
+              "RelativeToolTip": "AlquilerVehiculos\\Views\\FrmUsuarios.cs",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAmwFkAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-13T14:36:16.975Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FrmUsuarios.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\AlquilerVehiculos\\Views\\FrmUsuarios.cs",
+              "RelativeDocumentMoniker": "AlquilerVehiculos\\Views\\FrmUsuarios.cs",
+              "ToolTip": "C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\AlquilerVehiculos\\Views\\FrmUsuarios.cs [Dise\u00F1o]",
+              "RelativeToolTip": "AlquilerVehiculos\\Views\\FrmUsuarios.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-13T14:36:01.553Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\AlquilerVehiculos\\Models\\Usuario.cs",
+              "RelativeDocumentMoniker": "AlquilerVehiculos\\Models\\Usuario.cs",
+              "ToolTip": "C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\AlquilerVehiculos\\Models\\Usuario.cs",
+              "RelativeToolTip": "AlquilerVehiculos\\Models\\Usuario.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-13T00:35:18.815Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "FrmPrincipal.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\AlquilerVehiculos\\Views\\FrmPrincipal.cs",
+              "RelativeDocumentMoniker": "AlquilerVehiculos\\Views\\FrmPrincipal.cs",
+              "ToolTip": "C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\AlquilerVehiculos\\Views\\FrmPrincipal.cs [Dise\u00F1o]",
+              "RelativeToolTip": "AlquilerVehiculos\\Views\\FrmPrincipal.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-13T01:35:24.342Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "FrmLogin.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\AlquilerVehiculos\\Views\\FrmLogin.cs",
+              "RelativeDocumentMoniker": "AlquilerVehiculos\\Views\\FrmLogin.cs",
+              "ToolTip": "C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\AlquilerVehiculos\\Views\\FrmLogin.cs [Dise\u00F1o]",
+              "RelativeToolTip": "AlquilerVehiculos\\Views\\FrmLogin.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-26T15:00:28.624Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "FrmRoles.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\AlquilerVehiculos\\Views\\FrmRoles.cs",
               "RelativeDocumentMoniker": "AlquilerVehiculos\\Views\\FrmRoles.cs",
@@ -204,7 +261,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "ClasificacionVehiculo.cs",
               "DocumentMoniker": "C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\AlquilerVehiculos\\Models\\ClasificacionVehiculo.cs",
               "RelativeDocumentMoniker": "AlquilerVehiculos\\Models\\ClasificacionVehiculo.cs",
@@ -217,7 +274,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "FrmClasificacionVehiculos.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\AlquilerVehiculos\\Views\\FrmClasificacionVehiculos.cs",
               "RelativeDocumentMoniker": "AlquilerVehiculos\\Views\\FrmClasificacionVehiculos.cs",
@@ -228,19 +285,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\AlquilerVehiculos\\Models\\Usuario.cs",
-              "RelativeDocumentMoniker": "AlquilerVehiculos\\Models\\Usuario.cs",
-              "ToolTip": "C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\AlquilerVehiculos\\Models\\Usuario.cs",
-              "RelativeToolTip": "AlquilerVehiculos\\Models\\Usuario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-13T00:35:18.815Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
               "Title": "Vehiculo.cs",
               "DocumentMoniker": "C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\AlquilerVehiculos\\Models\\Vehiculo.cs",
               "RelativeDocumentMoniker": "AlquilerVehiculos\\Models\\Vehiculo.cs",
@@ -252,7 +297,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "FrmRoles.Designer.cs",
               "DocumentMoniker": "C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\AlquilerVehiculos\\Views\\FrmRoles.Designer.cs",
               "RelativeDocumentMoniker": "AlquilerVehiculos\\Views\\FrmRoles.Designer.cs",
@@ -265,7 +310,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "FrmClasificacionVehiculos.cs",
               "DocumentMoniker": "C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\AlquilerVehiculos\\Views\\FrmClasificacionVehiculos.cs",
               "RelativeDocumentMoniker": "AlquilerVehiculos\\Views\\FrmClasificacionVehiculos.cs",
@@ -277,18 +322,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "FrmUsuarios.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\AlquilerVehiculos\\Views\\FrmUsuarios.cs",
-              "RelativeDocumentMoniker": "AlquilerVehiculos\\Views\\FrmUsuarios.cs",
-              "ToolTip": "C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\AlquilerVehiculos\\Views\\FrmUsuarios.cs [Dise\u00F1o]",
-              "RelativeToolTip": "AlquilerVehiculos\\Views\\FrmUsuarios.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-13T14:36:01.553Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "FrmClasificacionVehiculos.Designer.cs",
               "DocumentMoniker": "C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\AlquilerVehiculos\\Views\\FrmClasificacionVehiculos.Designer.cs",
               "RelativeDocumentMoniker": "AlquilerVehiculos\\Views\\FrmClasificacionVehiculos.Designer.cs",
@@ -300,19 +334,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "FrmUsuarios.cs",
-              "DocumentMoniker": "C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\AlquilerVehiculos\\Views\\FrmUsuarios.cs",
-              "RelativeDocumentMoniker": "AlquilerVehiculos\\Views\\FrmUsuarios.cs",
-              "ToolTip": "C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\AlquilerVehiculos\\Views\\FrmUsuarios.cs",
-              "RelativeToolTip": "AlquilerVehiculos\\Views\\FrmUsuarios.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwBwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-13T14:36:16.975Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "FrmUsuarios.Designer.cs",
               "DocumentMoniker": "C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\AlquilerVehiculos\\Views\\FrmUsuarios.Designer.cs",
               "RelativeDocumentMoniker": "AlquilerVehiculos\\Views\\FrmUsuarios.Designer.cs",
@@ -320,11 +342,12 @@
               "RelativeToolTip": "AlquilerVehiculos\\Views\\FrmUsuarios.Designer.cs",
               "ViewState": "AgIAAEgAAAAAAAAAAAAIwFsAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-13T14:37:10.318Z"
+              "WhenOpened": "2026-10-13T14:37:10.318Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "Login.cs",
               "DocumentMoniker": "C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\AlquilerVehiculos\\Models\\Login.cs",
               "RelativeDocumentMoniker": "AlquilerVehiculos\\Models\\Login.cs",
@@ -336,7 +359,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "App.config",
               "DocumentMoniker": "C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\AlquilerVehiculos\\App.config",
               "RelativeDocumentMoniker": "AlquilerVehiculos\\App.config",
@@ -349,7 +372,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "Seguridad.cs",
               "DocumentMoniker": "C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\AlquilerVehiculos\\Utilities\\Seguridad.cs",
               "RelativeDocumentMoniker": "AlquilerVehiculos\\Utilities\\Seguridad.cs",
@@ -361,7 +384,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "FrmLogin.cs",
               "DocumentMoniker": "C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\AlquilerVehiculos\\Views\\FrmLogin.cs",
               "RelativeDocumentMoniker": "AlquilerVehiculos\\Views\\FrmLogin.cs",
@@ -373,7 +396,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "LoginDatos.cs",
               "DocumentMoniker": "C:\\Users\\sandr\\Documents\\GitHub\\Curso_Progra3\\Curso_Progra3_2026\\AlquilerVehiculos\\AlquilerVehiculos\\Datos\\LoginDatos.cs",
               "RelativeDocumentMoniker": "AlquilerVehiculos\\Datos\\LoginDatos.cs",

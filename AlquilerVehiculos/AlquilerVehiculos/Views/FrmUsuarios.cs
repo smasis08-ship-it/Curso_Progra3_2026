@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AlquilerVehiculos.Datos;
+using AlquilerVehiculos.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,9 @@ namespace AlquilerVehiculos
 {
     public partial class FrmUsuarios : Form
     {
+        UsuarioAD usuarioAD = new UsuarioAD();
+        RolAD rolAD = new RolAD();
+        List<Rol> lRoles = new List<Rol>();
         public FrmUsuarios()
         {
             InitializeComponent();
@@ -19,7 +24,21 @@ namespace AlquilerVehiculos
 
         private void FrmUsuarios_Load(object sender, EventArgs e)
         {
+            try
+            {
+                CargarUsuarios();
+                CargarRoles();
+                cbRoles.DisplayMember = "NombreRol";
+                cbRoles.ValueMember = "IdRol";
+                cbRoles.DataSource = lRoles;
 
+                // No seleccionar ningún rol inicialmente
+                cbRoles.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -30,6 +49,81 @@ namespace AlquilerVehiculos
         private void rolesToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void CargarRoles()
+        {
+            DataTable dt = rolAD.ObtenerRoles();
+            lRoles = dt.AsEnumerable()
+                .Select(fila => new Rol
+                {
+                    IdRol = Convert.ToInt32(fila["IdRol"]),
+                    NombreRol = fila["NombreRol"].ToString(),
+                    Descripcion = fila["Descripcion"].ToString()
+                })
+                .ToList();
+        }
+
+
+        private void CargarUsuarios()
+        {
+            DataTable dt = usuarioAD.ObtenerUsuarios();
+
+            dgvUsuarios.AutoGenerateColumns = true;
+            dgvUsuarios.DataSource = null;
+            dgvUsuarios.Columns.Clear();
+
+            dgvUsuarios.DataSource = dt;
+
+            dgvUsuarios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            dgvUsuarios.ReadOnly = true;
+            dgvUsuarios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        }
+
+        public bool InsertarUsuario(Usuario usuario)
+        {
+
+            usuario.IdRol = int.Parse(cbRoles.SelectedValue.ToString());//lRoles.Where(x => x.NombreRol == cbRoles.Text).FirstOrDefault().IdRol;
+
+            int resultado = 0;
+            resultado = usuarioAD.Insertar(usuario);
+            if (resultado > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Usuario usuario = new Usuario();
+                usuario.Nombre = txtNombre.Text;
+                usuario.Correo = txtCorreo.Text;
+                usuario.FechaCreacion = DateTime.Now;
+
+                bool resultado = false;
+                resultado = InsertarUsuario(usuario);
+                if (resultado)
+                {
+                    MessageBox.Show("Usuario " + usuario.Nombre + " insertado correctamente");
+                    CargarUsuarios();
+                }
+                else
+                {
+                    MessageBox.Show("Error al insertar el usuario " + usuario.Nombre);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.Message);
+            }
         }
     }
 }

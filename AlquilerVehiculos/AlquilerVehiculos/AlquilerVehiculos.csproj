@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Datos\LoginDatos.cs" />
     <Compile Include="Datos\RolAD.cs" />
+    <Compile Include="Datos\UsuarioAD.cs" />
     <Compile Include="Models\ClasificacionVehiculo.cs" />
     <Compile Include="Views\FrmRoles.cs">
       <SubType>Form</SubType>
