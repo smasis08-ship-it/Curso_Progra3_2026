@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AlquilerVehiculos.Datos;
+using AlquilerVehiculos.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,7 @@ namespace AlquilerVehiculos
 {
     public partial class FrmRoles : Form
     {
+        RolAD rolAD = new RolAD();
         public FrmRoles()
         {
             InitializeComponent();
@@ -19,7 +22,34 @@ namespace AlquilerVehiculos
 
         private void FrmRoles_Load(object sender, EventArgs e)
         {
+            try
+            {
+                CargarRoles();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error " + ex.Message);
+            }
+            
 
+        }
+
+        private void CargarRoles()
+        {
+            DataTable dt = rolAD.ObtenerRoles();
+
+            dgvRoles.AutoGenerateColumns = true;
+            dgvRoles.DataSource = null;
+            dgvRoles.Columns.Clear();
+
+            dgvRoles.DataSource = dt;
+
+            dgvRoles.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.Fill;
+
+            dgvRoles.ReadOnly = true;
+            dgvRoles.SelectionMode =
+                DataGridViewSelectionMode.FullRowSelect;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -35,6 +65,24 @@ namespace AlquilerVehiculos
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Rol rol = new Rol();
+            rol.NombreRol = txtNombreRol.Text;
+            rol.Descripcion = txtDescripcion.Text;
+            rol.FechaCreacion = DateTime.Now;
+            int resultado = 0;
+            resultado = rolAD.Insertar(rol);
+            if(resultado > 0)
+            {
+                MessageBox.Show("Rol "+ rol.NombreRol +" insertado correctamente");
+            }
+            else
+            {
+                MessageBox.Show("Error al insertar el rol " + rol.NombreRol);
+            }
         }
     }
 }

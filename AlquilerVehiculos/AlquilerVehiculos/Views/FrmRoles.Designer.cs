@@ -31,18 +31,18 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvRoles = new System.Windows.Forms.DataGridView();
+            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtNombreRol = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cbkActivar = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRoles)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -78,23 +78,38 @@
             this.label1.Text = "Alquiler de Vehiculos";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // dataGridView1
+            // dgvRoles
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvRoles.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvRoles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Tipo,
             this.Detalle,
             this.Activo});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 199);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dataGridView1.Size = new System.Drawing.Size(776, 239);
-            this.dataGridView1.TabIndex = 9;
+            this.dgvRoles.Location = new System.Drawing.Point(12, 199);
+            this.dgvRoles.Name = "dgvRoles";
+            this.dgvRoles.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dgvRoles.Size = new System.Drawing.Size(776, 239);
+            this.dgvRoles.TabIndex = 9;
+            // 
+            // Tipo
+            // 
+            this.Tipo.HeaderText = "Rol";
+            this.Tipo.Name = "Tipo";
+            // 
+            // Detalle
+            // 
+            this.Detalle.HeaderText = "Descripción";
+            this.Detalle.Name = "Detalle";
+            // 
+            // Activo
+            // 
+            this.Activo.HeaderText = "Activo";
+            this.Activo.Name = "Activo";
             // 
             // txtNombreRol
             // 
             this.txtNombreRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreRol.Location = new System.Drawing.Point(12, 121);
+            this.txtNombreRol.Location = new System.Drawing.Point(12, 126);
             this.txtNombreRol.Name = "txtNombreRol";
             this.txtNombreRol.Size = new System.Drawing.Size(280, 22);
             this.txtNombreRol.TabIndex = 10;
@@ -148,21 +163,7 @@
             this.button1.TabIndex = 17;
             this.button1.Text = "Agregar";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // Tipo
-            // 
-            this.Tipo.HeaderText = "Rol";
-            this.Tipo.Name = "Tipo";
-            // 
-            // Detalle
-            // 
-            this.Detalle.HeaderText = "Descripción";
-            this.Detalle.Name = "Detalle";
-            // 
-            // Activo
-            // 
-            this.Activo.HeaderText = "Activo";
-            this.Activo.Name = "Activo";
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FrmRoles
             // 
@@ -176,7 +177,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.txtNombreRol);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvRoles);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
             this.Name = "FrmRoles";
@@ -185,7 +186,7 @@
             this.Load += new System.EventHandler(this.FrmRoles_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRoles)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,7 +196,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvRoles;
         private System.Windows.Forms.TextBox txtNombreRol;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label2;
