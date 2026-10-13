@@ -143,5 +143,10 @@ namespace AlquilerVehiculos
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+
+        private void cbMostrarPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            txtPassword.UseSystemPasswordChar = !cbMostrarPassword.Checked;
+        }
     }
 }

@@ -41,6 +41,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
+            this.cbMostrarPassword = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,10 +102,11 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(207, 22);
             this.txtPassword.TabIndex = 5;
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(342, 290);
+            this.button1.Location = new System.Drawing.Point(342, 312);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(207, 24);
             this.button1.TabIndex = 6;
@@ -139,14 +141,25 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(341, 332);
+            this.button2.Location = new System.Drawing.Point(466, 352);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(207, 24);
+            this.button2.Size = new System.Drawing.Size(82, 24);
             this.button2.TabIndex = 9;
             this.button2.Text = "Hash";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // cbMostrarPassword
+            // 
+            this.cbMostrarPassword.AutoSize = true;
+            this.cbMostrarPassword.Location = new System.Drawing.Point(451, 271);
+            this.cbMostrarPassword.Name = "cbMostrarPassword";
+            this.cbMostrarPassword.Size = new System.Drawing.Size(98, 17);
+            this.cbMostrarPassword.TabIndex = 10;
+            this.cbMostrarPassword.Text = "Ver contraseña";
+            this.cbMostrarPassword.UseVisualStyleBackColor = true;
+            this.cbMostrarPassword.CheckedChanged += new System.EventHandler(this.cbMostrarPassword_CheckedChanged);
             // 
             // FrmLogin
             // 
@@ -155,6 +168,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(574, 388);
+            this.Controls.Add(this.cbMostrarPassword);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -188,6 +202,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.CheckBox cbMostrarPassword;
     }
 }
 
