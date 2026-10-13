@@ -10,5 +10,8 @@ namespace AlquilerVehiculos.Models
     {
         public int IdRol { get; set; }
         public string NombreRol { get; set; }
+        public string Descripcion { get; set; }
+        public DateTime FechaCreacion { get; set; }
+        public DateTime FechaModificacion { get; set; }
     }
 }

@@ -14,6 +14,8 @@ namespace AlquilerVehiculos.Models
         public string Correo { get; set; }
         public int IdRol { get; set; }
         public bool Activo { get; set; }
+        public DateTime FechaCreacion { get; set; }
+        public DateTime FechaModificacion { get; set; }
     }
 
 }
