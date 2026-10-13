@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace AlquilerVehiculos
 {
-    public partial class FrmPrincipal : Form
+    public partial class FrmUsuarios : Form
     {
-        public FrmPrincipal()
+        public FrmUsuarios()
         {
             InitializeComponent();
         }
 
-        private void FrmPrincipal_Load(object sender, EventArgs e)
+        private void FrmUsuarios_Load(object sender, EventArgs e)
         {
 
         }
