@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AlquilerVehiculos.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,16 @@ namespace AlquilerVehiculos
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
+            lblBienvenido.Text = "Bienvenido " + SesionUsuario.Nombre;
+            if (SesionUsuario.IdRol == 1)
+            {
+                menuAdmin.Visible = true;
+            }
 
+            else
+            { 
+                menuAdmin.Visible = false; 
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -60,6 +70,11 @@ namespace AlquilerVehiculos
         {
             FrmContraseñaUsuarios frmVehiculos = new FrmContraseñaUsuarios();
             frmVehiculos.Show();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

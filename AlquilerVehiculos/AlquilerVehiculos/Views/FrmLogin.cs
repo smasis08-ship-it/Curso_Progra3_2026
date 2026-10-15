@@ -29,9 +29,10 @@ namespace AlquilerVehiculos
         private void button1_Click(object sender, EventArgs e)
         {
             // Valida los campos obligatorios
-            if (string.IsNullOrWhiteSpace(txtUser.Text) || string.IsNullOrWhiteSpace(txtPassword.Text))
+            if (string.IsNullOrWhiteSpace(txtUser.Text) ||
+                string.IsNullOrWhiteSpace(txtPassword.Text))
             {
-                MessageBox.Show( "Debe ingresar el correo y la contraseña."); 
+                MessageBox.Show("Debe ingresar el correo y la contraseña.");
                 return;
             }
 
@@ -42,37 +43,72 @@ namespace AlquilerVehiculos
                 login.Correo = txtUser.Text.Trim();
                 login.Password = txtPassword.Text;
 
-                // instancia para el sql
+                // Instancia para consultar SQL Server
                 LoginDatos datos = new LoginDatos();
 
-                // valida credenciales
+                // Validar credenciales
                 Usuario usuario = datos.IniciarSesion(login);
 
                 if (usuario != null)
                 {
-                    MessageBox.Show("Bienvenido " + usuario.Nombre, "Inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Guardar los datos del usuario en sesión
+                    SesionUsuario.IniciarSesion(
+                        usuario.IdUsuario,
+                        usuario.Nombre,
+                        usuario.Correo,
+                        usuario.IdRol
+                    );
 
-                    // rol del usuario
-                    if (usuario.IdRol == 1)
+                    MessageBox.Show(
+                        "Bienvenido " + SesionUsuario.Nombre,
+                        "Inicio de sesión",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
+
+                    // Validar rol
+                    if (SesionUsuario.IdRol == 1)
                     {
-                        
                         FrmPrincipal frmPrincipal = new FrmPrincipal();
+
+                        // Cerrar la aplicación cuando se cierre el principal
+                        frmPrincipal.FormClosed += (s, args) => this.Close();
+
                         frmPrincipal.Show();
                         this.Hide();
                     }
-                    else if (usuario.IdRol == 2)
+                    else if (SesionUsuario.IdRol == 2)
                     {
+                        FrmPrincipal frmPrincipal = new FrmPrincipal();
 
+                        // Cerrar la aplicación cuando se cierre el principal
+                        frmPrincipal.FormClosed += (s, args) => this.Close();
+
+                        frmPrincipal.Show();
+                        this.Hide();
+                        SesionUsuario.CerrarSesion();
+                    }
+                    else
+                    {
+                        MessageBox.Show("El usuario no tiene un rol autorizado.");
+                        SesionUsuario.CerrarSesion();
                     }
                 }
                 else
                 {
-                    MessageBox.Show( "Correo o contraseña incorrectos.",  "Acceso denegado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(
+                        "Correo o contraseña incorrectos.",
+                        "Acceso denegado",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning
+                    );
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(  "Error al conectar con la base de datos: " + ex.Message);
+                MessageBox.Show(
+                    "Error al iniciar sesión: " + ex.Message
+                );
             }
         }
 

@@ -56,6 +56,7 @@
     <Compile Include="Models\ClasificacionVehiculo.cs" />
     <Compile Include="Models\Master.cs" />
     <Compile Include="Models\Marca.cs" />
+    <Compile Include="Models\SesionUsuario.cs" />
     <Compile Include="Views\FrmContraseñaUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +152,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\alquilerLogo.png" />
+    <Content Include="images\buscar.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="images\NewFolder1\" />
