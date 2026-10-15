@@ -1,5 +1,6 @@
 ﻿using AlquilerVehiculos.Datos;
 using AlquilerVehiculos.Models;
+using SistemaAlquilerVehiculos.Utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,9 +17,10 @@ namespace AlquilerVehiculos
     {
         MarcaAD marcaAD = new MarcaAD();
         VehiculoAD vehiculoAD = new VehiculoAD();
+        UsuarioAD usuarioAD = new UsuarioAD();
         ClasificacionVehiculoAD clasificacionAD = new ClasificacionVehiculoAD();
 
-        List<Marca> lMarcas = new List<Marca>();
+        List<Usuario> lUsuarios = new List<Usuario>();
         List<ClasificacionVehiculo> lClasificaciones = new List<ClasificacionVehiculo>();
         public FrmContraseñaUsuarios()
         {
@@ -29,23 +31,14 @@ namespace AlquilerVehiculos
         {
             try
             {
-                CargarVehiculos();
-                CargarMarcasVehiculos();
-                CargarClasificaciones();
+                CargarUsuarios();
 
-                cbMarcas.DisplayMember = "NombreMarca";
-                cbMarcas.ValueMember = "IdMarca";
-                cbMarcas.DataSource = lMarcas;
+                cbUsuario.DisplayMember = "Nombre";
+                cbUsuario.ValueMember = "IdUsuario";
+                cbUsuario.DataSource = lUsuarios;
 
-                // No seleccionar ninguna marca inicialmente
-                cbMarcas.SelectedIndex = -1;
-
-                cbClasificacion.DisplayMember = "Nombre";
-                cbClasificacion.ValueMember = "IdClasificacion";
-                cbClasificacion.DataSource = lClasificaciones;
-
-                // No seleccionar ninguna marca inicialmente
-                cbClasificacion.SelectedIndex = -1;
+                // No seleccionar ningun usuario inicialmente
+                cbUsuario.SelectedIndex = -1;
             }
             catch(Exception ex)
             {
@@ -55,43 +48,14 @@ namespace AlquilerVehiculos
 
         }
 
-        private void CargarVehiculos()
+        private void CargarUsuarios()
         {
-            DataTable dt = vehiculoAD.ObtenerVehiculos();
-
-            dgvMarca.AutoGenerateColumns = true;
-            dgvMarca.DataSource = null;
-            dgvMarca.Columns.Clear();
-
-            dgvMarca.DataSource = dt;
-
-            dgvMarca.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-            dgvMarca.ReadOnly = true;
-            dgvMarca.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-        }
-
-        private void CargarMarcasVehiculos()
-        {
-            DataTable dt = marcaAD.ObtenerMarca();
-            lMarcas = dt.AsEnumerable()
-                .Select(fila => new Marca
+            DataTable dt = usuarioAD.ObtenerUsuarios();
+            lUsuarios = dt.AsEnumerable()
+                .Select(fila => new Usuario
                 {
-                    IdMarca = Convert.ToInt32(fila["IdMarca"]),
-                    NombreMarca = fila["Marca"].ToString(),
-                    Descripcion = fila["Descripcion"].ToString()
-                })
-                .ToList();
-        }
-        private void CargarClasificaciones()
-        {
-            DataTable dt = clasificacionAD.ObtenerClasificaciones();
-            lClasificaciones = dt.AsEnumerable()
-                .Select(fila => new ClasificacionVehiculo
-                {
-                    IdClasificacion = Convert.ToInt32(fila["IdClasificacion"]),
-                    Nombre = fila["Nombre"].ToString(),
-                    Descripcion = fila["Descripcion"].ToString()
+                    IdUsuario = Convert.ToInt32(fila["IdUsuario"]),
+                    Nombre = fila["Nombre"].ToString()
                 })
                 .ToList();
         }
@@ -111,38 +75,7 @@ namespace AlquilerVehiculos
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Vehiculo vehiculo = new Vehiculo();
-                vehiculo.Modelo = txtModelo.Text;
-                vehiculo.Placa = txtPlaca.Text;
-                vehiculo.PrecioDia = Convert.ToDecimal(txtPrecioDia.Text);
-                vehiculo.MarcaId = int.Parse(cbMarcas.SelectedValue.ToString());
-                vehiculo.Estado = cbkActivar.Checked;
-                vehiculo.Annio = int.Parse(txtAnnio.Text);
-                vehiculo.IdClasificacion = int.Parse(cbClasificacion.SelectedValue.ToString());
-
-                bool resultado = false;
-                resultado = InsertarMarca(vehiculo);
-                if (resultado)
-                {
-                    MessageBox.Show("Vehiculo " + vehiculo.Modelo + " insertado correctamente");
-                    CargarVehiculos();
-                    Limpiar();
-                }
-                else
-                {
-                    MessageBox.Show("Error al insertar el vehiculo " + vehiculo.Modelo);
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error " + ex.Message);
-            }
-        }
+       
 
         public bool InsertarMarca(Vehiculo vehiculo)
         {
@@ -159,17 +92,6 @@ namespace AlquilerVehiculos
             }
         }
 
-        public void Limpiar()
-        {
-            txtModelo.Clear();
-            txtPlaca.Clear();
-            txtPrecioDia.Clear();
-            txtAnnio.Clear();
-            cbMarcas.SelectedIndex = -1;
-            cbClasificacion.SelectedIndex = -1;
-            cbkActivar.Checked = true;
-        }
-
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -177,6 +99,25 @@ namespace AlquilerVehiculos
 
         private void label4_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Seguridad seguridad = new Seguridad();
+            byte[] hash = null;
+            byte[] salt = null;
+            seguridad.CrearHash(txtPassword.Text,out hash,out salt);
+            var respuesta = usuarioAD.AsignarPassword(int.Parse(cbUsuario.SelectedValue.ToString()),hash,salt);
+            if (respuesta > 0)
+            {
+                MessageBox.Show("Contraseña asignada correctamente");
+            }
+            else
+            {
+                MessageBox.Show("No fue posible asignar la contraseña");
+            }
+
 
         }
     }

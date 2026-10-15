@@ -44,8 +44,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cbkActivar = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.asignarContraseñasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -53,6 +57,7 @@
             this.panel1.BackColor = System.Drawing.Color.Navy;
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.menuStrip1);
             this.panel1.Location = new System.Drawing.Point(-2, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(804, 74);
@@ -195,6 +200,31 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.usuarioToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(804, 24);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // usuarioToolStripMenuItem
+            // 
+            this.usuarioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.asignarContraseñasToolStripMenuItem});
+            this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
+            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.usuarioToolStripMenuItem.Text = "Usuario";
+            // 
+            // asignarContraseñasToolStripMenuItem
+            // 
+            this.asignarContraseñasToolStripMenuItem.Name = "asignarContraseñasToolStripMenuItem";
+            this.asignarContraseñasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.asignarContraseñasToolStripMenuItem.Text = "Asignar contraseñas";
+            this.asignarContraseñasToolStripMenuItem.Click += new System.EventHandler(this.asignarContraseñasToolStripMenuItem_Click);
+            // 
             // FrmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -211,6 +241,7 @@
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.dgvUsuarios);
             this.Controls.Add(this.panel1);
+            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "FrmUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -219,6 +250,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,5 +275,8 @@
         private System.Windows.Forms.CheckBox cbkActivar;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem usuarioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem asignarContraseñasToolStripMenuItem;
     }
 }

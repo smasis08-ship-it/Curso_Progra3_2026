@@ -125,5 +125,11 @@ namespace AlquilerVehiculos
                 MessageBox.Show("Error " + ex.Message);
             }
         }
+
+        private void asignarContraseñasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmContraseñaUsuarios frmContraseñaUsuarios = new FrmContraseñaUsuarios();
+            frmContraseñaUsuarios.Show();
+        }
     }
 }

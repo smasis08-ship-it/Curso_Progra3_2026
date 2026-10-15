@@ -58,7 +58,7 @@ namespace AlquilerVehiculos
 
         private void vehiculosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            FrmVehiculos frmVehiculos = new FrmVehiculos();
+            FrmContraseñaUsuarios frmVehiculos = new FrmContraseñaUsuarios();
             frmVehiculos.Show();
         }
     }

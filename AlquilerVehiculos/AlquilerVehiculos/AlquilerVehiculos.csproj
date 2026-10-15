@@ -56,11 +56,11 @@
     <Compile Include="Models\ClasificacionVehiculo.cs" />
     <Compile Include="Models\Master.cs" />
     <Compile Include="Models\Marca.cs" />
-    <Compile Include="Views\FrmVehiculos.cs">
+    <Compile Include="Views\FrmContraseñaUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\FrmVehiculos.Designer.cs">
-      <DependentUpon>FrmVehiculos.cs</DependentUpon>
+    <Compile Include="Views\FrmContraseñaUsuarios.Designer.cs">
+      <DependentUpon>FrmContraseñaUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FrmMarcas.cs">
       <SubType>Form</SubType>
@@ -106,8 +106,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\ConexionDB.cs" />
     <Compile Include="Utilities\Seguridad.cs" />
-    <EmbeddedResource Include="Views\FrmVehiculos.resx">
-      <DependentUpon>FrmVehiculos.cs</DependentUpon>
+    <EmbeddedResource Include="Views\FrmContraseñaUsuarios.resx">
+      <DependentUpon>FrmContraseñaUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmMarcas.resx">
       <DependentUpon>FrmMarcas.cs</DependentUpon>
