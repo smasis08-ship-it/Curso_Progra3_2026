@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace AlquilerVehiculos.Models
 {
-    public class Rol
+    public class Rol : Master
     {
         public int IdRol { get; set; }
         public string NombreRol { get; set; }
         public string Descripcion { get; set; }
-        public DateTime FechaCreacion { get; set; }
-        public DateTime FechaModificacion { get; set; }
+        
     }
 }

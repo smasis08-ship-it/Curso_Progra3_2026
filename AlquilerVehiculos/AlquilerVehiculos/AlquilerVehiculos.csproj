@@ -47,10 +47,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Datos\ClasificacionVehiculoAD.cs" />
     <Compile Include="Datos\LoginDatos.cs" />
+    <Compile Include="Datos\MarcaAD.cs" />
     <Compile Include="Datos\RolAD.cs" />
     <Compile Include="Datos\UsuarioAD.cs" />
+    <Compile Include="Datos\VehiculoAD.cs" />
     <Compile Include="Models\ClasificacionVehiculo.cs" />
+    <Compile Include="Models\Master.cs" />
+    <Compile Include="Models\Marca.cs" />
+    <Compile Include="Views\FrmVehiculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmVehiculos.Designer.cs">
+      <DependentUpon>FrmVehiculos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmMarcas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmMarcas.Designer.cs">
+      <DependentUpon>FrmMarcas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FrmRoles.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +106,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\ConexionDB.cs" />
     <Compile Include="Utilities\Seguridad.cs" />
+    <EmbeddedResource Include="Views\FrmVehiculos.resx">
+      <DependentUpon>FrmVehiculos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmMarcas.resx">
+      <DependentUpon>FrmMarcas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmRoles.resx">
       <DependentUpon>FrmRoles.cs</DependentUpon>
     </EmbeddedResource>

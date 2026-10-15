@@ -49,5 +49,17 @@ namespace AlquilerVehiculos
             FrmClasificacionVehiculos frmClasificacionVehiculos = new FrmClasificacionVehiculos();
             frmClasificacionVehiculos.Show();
         }
+
+        private void marcasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmMarcas frmMarcas = new FrmMarcas();
+            frmMarcas.Show();
+        }
+
+        private void vehiculosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmVehiculos frmVehiculos = new FrmVehiculos();
+            frmVehiculos.Show();
+        }
     }
 }
