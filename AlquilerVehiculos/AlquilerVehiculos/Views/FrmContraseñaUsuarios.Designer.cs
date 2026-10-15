@@ -1,6 +1,6 @@
 ﻿namespace AlquilerVehiculos
 {
-    partial class FrmVehiculos
+    partial class FrmContraseñaUsuarios
     {
         /// <summary>
         /// Required designer variable.
@@ -45,6 +45,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtPrecioDia = new System.Windows.Forms.TextBox();
             this.cbMarcas = new System.Windows.Forms.ComboBox();
+            this.cbClasificacion = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtAnnio = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarca)).BeginInit();
             this.SuspendLayout();
@@ -89,7 +93,7 @@
             this.Tipo,
             this.Detalle,
             this.Activo});
-            this.dgvMarca.Location = new System.Drawing.Point(12, 245);
+            this.dgvMarca.Location = new System.Drawing.Point(12, 277);
             this.dgvMarca.Name = "dgvMarca";
             this.dgvMarca.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgvMarca.Size = new System.Drawing.Size(776, 193);
@@ -136,7 +140,7 @@
             this.cbkActivar.AutoSize = true;
             this.cbkActivar.Checked = true;
             this.cbkActivar.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbkActivar.Location = new System.Drawing.Point(527, 196);
+            this.cbkActivar.Location = new System.Drawing.Point(16, 235);
             this.cbkActivar.Name = "cbkActivar";
             this.cbkActivar.Size = new System.Drawing.Size(56, 17);
             this.cbkActivar.TabIndex = 16;
@@ -145,7 +149,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(612, 196);
+            this.button1.Location = new System.Drawing.Point(612, 230);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(176, 24);
             this.button1.TabIndex = 17;
@@ -164,7 +168,7 @@
             // txtPlaca
             // 
             this.txtPlaca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPlaca.Location = new System.Drawing.Point(527, 126);
+            this.txtPlaca.Location = new System.Drawing.Point(555, 126);
             this.txtPlaca.Name = "txtPlaca";
             this.txtPlaca.Size = new System.Drawing.Size(233, 22);
             this.txtPlaca.TabIndex = 19;
@@ -172,12 +176,13 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(535, 102);
+            this.label4.Location = new System.Drawing.Point(552, 102);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(34, 13);
             this.label4.TabIndex = 20;
             this.label4.Text = "Placa";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label6
             // 
@@ -206,12 +211,54 @@
             this.cbMarcas.Size = new System.Drawing.Size(241, 23);
             this.cbMarcas.TabIndex = 23;
             // 
+            // cbClasificacion
+            // 
+            this.cbClasificacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbClasificacion.FormattingEnabled = true;
+            this.cbClasificacion.Location = new System.Drawing.Point(279, 190);
+            this.cbClasificacion.Name = "cbClasificacion";
+            this.cbClasificacion.Size = new System.Drawing.Size(233, 23);
+            this.cbClasificacion.TabIndex = 24;
+            this.cbClasificacion.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(276, 167);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(66, 13);
+            this.label7.TabIndex = 25;
+            this.label7.Text = "Clasificación";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // txtAnnio
+            // 
+            this.txtAnnio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAnnio.Location = new System.Drawing.Point(555, 191);
+            this.txtAnnio.Name = "txtAnnio";
+            this.txtAnnio.Size = new System.Drawing.Size(233, 22);
+            this.txtAnnio.TabIndex = 26;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(552, 167);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(26, 13);
+            this.label8.TabIndex = 27;
+            this.label8.Text = "Año";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // FrmVehiculos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 496);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.txtAnnio);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.cbClasificacion);
             this.Controls.Add(this.cbMarcas);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtPrecioDia);
@@ -256,5 +303,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtPrecioDia;
         private System.Windows.Forms.ComboBox cbMarcas;
+        private System.Windows.Forms.ComboBox cbClasificacion;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtAnnio;
+        private System.Windows.Forms.Label label8;
     }
 }

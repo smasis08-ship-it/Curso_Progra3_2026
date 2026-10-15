@@ -14,6 +14,8 @@ namespace AlquilerVehiculos.Models
         public string Modelo { get; set; }
         public string Placa { get; set; }
         public decimal PrecioDia { get; set; }
+        public int? Annio { get; set; }
+        public int? IdClasificacion { get; set; }
         public bool Estado { get; set; }
 
         public decimal CalcularAlquiler(int dias)

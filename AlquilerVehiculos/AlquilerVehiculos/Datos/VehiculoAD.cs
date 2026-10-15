@@ -85,6 +85,12 @@ namespace AlquilerVehiculos.Datos
                     cmd.Parameters.Add("@MarcaId", SqlDbType.Int)
                         .Value = vehiculo.MarcaId;
 
+                    cmd.Parameters.Add("@IdClasificacion", SqlDbType.Int)
+                        .Value = vehiculo.IdClasificacion;
+
+                    cmd.Parameters.Add("@Annio", SqlDbType.Int)
+                        .Value = vehiculo.Annio;
+
                     cmd.Parameters.Add("@Modelo", SqlDbType.VarChar, 100)
                         .Value = vehiculo.Modelo;
 

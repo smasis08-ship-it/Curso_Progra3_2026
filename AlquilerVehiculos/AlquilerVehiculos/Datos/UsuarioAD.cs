@@ -96,5 +96,30 @@ namespace AlquilerVehiculos.Datos
                 }
             }
         }
+
+        public int AsignarPassword(int idUsuario, byte[] passwordHash, byte[] passwordSalt)
+        {
+            using (SqlConnection cn = conexionDB.ObtenerConexion())
+            {
+                using (SqlCommand cmd = new SqlCommand(
+                    "PR_AsignarPasswordUsuario", cn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@IdUsuario", SqlDbType.Int)
+                        .Value = idUsuario;
+
+                    cmd.Parameters.Add("@PasswordHash", SqlDbType.VarBinary, 32)
+                        .Value = passwordHash;
+
+                    cmd.Parameters.Add("@PasswordSalt", SqlDbType.VarBinary, 16)
+                        .Value = passwordSalt;
+
+                    cn.Open();
+
+                    return Convert.ToInt32(cmd.ExecuteScalar());
+                }
+            }
+        }
     }
 }

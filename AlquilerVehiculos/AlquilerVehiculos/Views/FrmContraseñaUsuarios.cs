@@ -12,12 +12,15 @@ using System.Windows.Forms;
 
 namespace AlquilerVehiculos
 {
-    public partial class FrmVehiculos : Form
+    public partial class FrmContraseñaUsuarios : Form
     {
         MarcaAD marcaAD = new MarcaAD();
         VehiculoAD vehiculoAD = new VehiculoAD();
+        ClasificacionVehiculoAD clasificacionAD = new ClasificacionVehiculoAD();
+
         List<Marca> lMarcas = new List<Marca>();
-        public FrmVehiculos()
+        List<ClasificacionVehiculo> lClasificaciones = new List<ClasificacionVehiculo>();
+        public FrmContraseñaUsuarios()
         {
             InitializeComponent();
         }
@@ -28,6 +31,7 @@ namespace AlquilerVehiculos
             {
                 CargarVehiculos();
                 CargarMarcasVehiculos();
+                CargarClasificaciones();
 
                 cbMarcas.DisplayMember = "NombreMarca";
                 cbMarcas.ValueMember = "IdMarca";
@@ -35,6 +39,13 @@ namespace AlquilerVehiculos
 
                 // No seleccionar ninguna marca inicialmente
                 cbMarcas.SelectedIndex = -1;
+
+                cbClasificacion.DisplayMember = "Nombre";
+                cbClasificacion.ValueMember = "IdClasificacion";
+                cbClasificacion.DataSource = lClasificaciones;
+
+                // No seleccionar ninguna marca inicialmente
+                cbClasificacion.SelectedIndex = -1;
             }
             catch(Exception ex)
             {
@@ -72,6 +83,18 @@ namespace AlquilerVehiculos
                 })
                 .ToList();
         }
+        private void CargarClasificaciones()
+        {
+            DataTable dt = clasificacionAD.ObtenerClasificaciones();
+            lClasificaciones = dt.AsEnumerable()
+                .Select(fila => new ClasificacionVehiculo
+                {
+                    IdClasificacion = Convert.ToInt32(fila["IdClasificacion"]),
+                    Nombre = fila["Nombre"].ToString(),
+                    Descripcion = fila["Descripcion"].ToString()
+                })
+                .ToList();
+        }
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -98,6 +121,8 @@ namespace AlquilerVehiculos
                 vehiculo.PrecioDia = Convert.ToDecimal(txtPrecioDia.Text);
                 vehiculo.MarcaId = int.Parse(cbMarcas.SelectedValue.ToString());
                 vehiculo.Estado = cbkActivar.Checked;
+                vehiculo.Annio = int.Parse(txtAnnio.Text);
+                vehiculo.IdClasificacion = int.Parse(cbClasificacion.SelectedValue.ToString());
 
                 bool resultado = false;
                 resultado = InsertarMarca(vehiculo);
@@ -139,8 +164,20 @@ namespace AlquilerVehiculos
             txtModelo.Clear();
             txtPlaca.Clear();
             txtPrecioDia.Clear();
+            txtAnnio.Clear();
             cbMarcas.SelectedIndex = -1;
+            cbClasificacion.SelectedIndex = -1;
             cbkActivar.Checked = true;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
