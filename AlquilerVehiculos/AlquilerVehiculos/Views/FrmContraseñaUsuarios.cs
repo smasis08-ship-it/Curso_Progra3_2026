@@ -15,11 +15,14 @@ namespace AlquilerVehiculos
 {
     public partial class FrmContraseñaUsuarios : Form
     {
+        //Instancias requeridas para las AD
         MarcaAD marcaAD = new MarcaAD();
         VehiculoAD vehiculoAD = new VehiculoAD();
         UsuarioAD usuarioAD = new UsuarioAD();
         ClasificacionVehiculoAD clasificacionAD = new ClasificacionVehiculoAD();
 
+
+        //Instancias de listas requeridas en la vista
         List<Usuario> lUsuarios = new List<Usuario>();
         List<ClasificacionVehiculo> lClasificaciones = new List<ClasificacionVehiculo>();
         public FrmContraseñaUsuarios()
@@ -31,6 +34,7 @@ namespace AlquilerVehiculos
         {
             try
             {
+                //Carga lista de usuarios
                 CargarUsuarios();
 
                 cbUsuario.DisplayMember = "Nombre";
@@ -79,7 +83,7 @@ namespace AlquilerVehiculos
 
         public bool InsertarMarca(Vehiculo vehiculo)
         {
-            
+            //Insertar marca
             int resultado = 0;
             resultado = vehiculoAD.Insertar(vehiculo);
             if (resultado > 0)
@@ -106,6 +110,7 @@ namespace AlquilerVehiculos
         {
             try
             {
+                //Valida campos requeridos
                 if (cbUsuario.SelectedIndex == -1)
                 {
                     MessageBox.Show("Debe seleccionar un usuario");

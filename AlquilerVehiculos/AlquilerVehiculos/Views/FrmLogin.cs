@@ -112,6 +112,7 @@ namespace AlquilerVehiculos
             }
         }
 
+        //Método requerido solo para crear el usuario admin
         private void button2_Click(object sender, EventArgs e)
         {
             try
@@ -164,6 +165,7 @@ namespace AlquilerVehiculos
 
         private void cbMostrarPassword_CheckedChanged(object sender, EventArgs e)
         {
+            //Mostrar campos de password como texto
             txtPassword.UseSystemPasswordChar = !cbMostrarPassword.Checked;
         }
     }

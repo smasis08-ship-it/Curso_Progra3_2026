@@ -15,6 +15,7 @@ namespace AlquilerVehiculos
 {
     public partial class FrmClasificacionVehiculos : Form
     {
+        //Instancia de acceso a datos
         ClasificacionVehiculoAD clasificacionAd = new ClasificacionVehiculoAD();
         public FrmClasificacionVehiculos()
         {
@@ -25,6 +26,7 @@ namespace AlquilerVehiculos
         {
             try
             {
+                //Carga lista de clasificaciones
                 CargarClasificacion();
             }
             catch(Exception ex) {
@@ -44,6 +46,7 @@ namespace AlquilerVehiculos
 
         private void CargarClasificacion()
         {
+            //Obtiene la data del AD y genera el datasource para el datagrid
             DataTable dt = clasificacionAd.ObtenerClasificaciones();
 
             dgvClasificacion.AutoGenerateColumns = true;
@@ -61,7 +64,7 @@ namespace AlquilerVehiculos
         public bool InsertarClasificacion(ClasificacionVehiculo clasificacion)
         {
 
-            
+            //Inserta la clasificación
             var resultado = clasificacionAd.Insertar(clasificacion);
             if (resultado > 0)
             {
@@ -75,6 +78,7 @@ namespace AlquilerVehiculos
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //Valida campos requeridos
             if(!Validaciones.ValidarNoVacio(txtTipo.Text.Trim()))
             {
                 MessageBox.Show("Debe ingresar un nombre para la clasificación");
@@ -86,6 +90,7 @@ namespace AlquilerVehiculos
             clasificacion.FechaCreacion = DateTime.Now;
             clasificacion.Estado = cbkActivar.Checked;
 
+            //Envia el insert de clasificaciones
             var resultado =  InsertarClasificacion(clasificacion);
 
             if (resultado)
