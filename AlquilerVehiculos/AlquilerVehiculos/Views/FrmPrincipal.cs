@@ -68,13 +68,23 @@ namespace AlquilerVehiculos
 
         private void vehiculosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            FrmContraseñaUsuarios frmVehiculos = new FrmContraseñaUsuarios();
+            FrmVehiculos frmVehiculos = new FrmVehiculos();
             frmVehiculos.Show();
         }
 
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            SesionUsuario.CerrarSesion();
+            FrmLogin frmLogin = new FrmLogin();
+            frmLogin.FormClosed += (s, args) => this.Close();
+
+            frmLogin.Show();
+            this.Hide();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using AlquilerVehiculos.Datos;
 using AlquilerVehiculos.Models;
+using AlquilerVehiculos.Utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -74,6 +75,11 @@ namespace AlquilerVehiculos
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if(!Validaciones.ValidarNoVacio(txtTipo.Text.Trim()))
+            {
+                MessageBox.Show("Debe ingresar un nombre para la clasificación");
+                return;
+            }
             ClasificacionVehiculo clasificacion = new ClasificacionVehiculo();
             clasificacion.Nombre = txtTipo.Text;
             clasificacion.Descripcion = txtDetalle.Text;

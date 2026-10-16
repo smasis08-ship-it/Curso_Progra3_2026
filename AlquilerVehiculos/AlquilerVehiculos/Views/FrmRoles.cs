@@ -1,5 +1,6 @@
 ﻿using AlquilerVehiculos.Datos;
 using AlquilerVehiculos.Models;
+using AlquilerVehiculos.Utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -69,6 +70,12 @@ namespace AlquilerVehiculos
         {
             try
             {
+                if (!Validaciones.ValidarNoVacio(txtNombreRol.Text.Trim()))
+                {
+                    MessageBox.Show("Debe ingresar un nombre para el rol");
+                    return;
+                }
+
                 Rol rol = new Rol();
                 rol.NombreRol = txtNombreRol.Text;
                 rol.Descripcion = txtDescripcion.Text;
@@ -80,6 +87,7 @@ namespace AlquilerVehiculos
                 {
                     MessageBox.Show("Rol " + rol.NombreRol + " insertado correctamente");
                     CargarRoles();
+                    Limpiar();
                 }
                 else
                 {
@@ -106,6 +114,13 @@ namespace AlquilerVehiculos
             {
                 return false;
             }
+        }
+
+        public void Limpiar()
+        {
+            txtNombreRol.Text = "";
+            txtDescripcion.Text = "";
+            cbkActivar.Checked = true;
         }
     }
 }

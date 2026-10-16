@@ -57,6 +57,7 @@
     <Compile Include="Models\Master.cs" />
     <Compile Include="Models\Marca.cs" />
     <Compile Include="Models\SesionUsuario.cs" />
+    <Compile Include="Utilities\Validaciones.cs" />
     <Compile Include="Views\FrmContraseñaUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +69,12 @@
     </Compile>
     <Compile Include="Views\FrmMarcas.Designer.cs">
       <DependentUpon>FrmMarcas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmVehiculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmVehiculos.Designer.cs">
+      <DependentUpon>FrmVehiculos.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FrmRoles.cs">
       <SubType>Form</SubType>
@@ -112,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmMarcas.resx">
       <DependentUpon>FrmMarcas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmVehiculos.resx">
+      <DependentUpon>FrmVehiculos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmRoles.resx">
       <DependentUpon>FrmRoles.cs</DependentUpon>

@@ -104,21 +104,36 @@ namespace AlquilerVehiculos
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            Seguridad seguridad = new Seguridad();
-            byte[] hash = null;
-            byte[] salt = null;
-            seguridad.CrearHash(txtPassword.Text,out hash,out salt);
-            var respuesta = usuarioAD.AsignarPassword(int.Parse(cbUsuario.SelectedValue.ToString()),hash,salt);
-            if (respuesta > 0)
+            try
             {
-                MessageBox.Show("Contraseña asignada correctamente");
+                if (cbUsuario.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Debe seleccionar un usuario");
+                    return;
+                }
+                if (txtPassword.Text.Trim() == "")
+                {
+                    MessageBox.Show("Debe asignar alguna contraseña");
+                    return;
+                }
+                Seguridad seguridad = new Seguridad();
+                byte[] hash = null;
+                byte[] salt = null;
+                seguridad.CrearHash(txtPassword.Text, out hash, out salt);
+                var respuesta = usuarioAD.AsignarPassword(int.Parse(cbUsuario.SelectedValue.ToString()), hash, salt);
+                if (respuesta > 0)
+                {
+                    MessageBox.Show("Contraseña asignada correctamente");
+                }
+                else
+                {
+                    MessageBox.Show("No fue posible asignar la contraseña");
+                }
             }
-            else
-            {
-                MessageBox.Show("No fue posible asignar la contraseña");
+            catch (Exception ex) { 
+            MessageBox.Show("Error: " +ex.Message);
             }
-
-
+            
         }
     }
 }

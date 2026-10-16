@@ -47,6 +47,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -218,12 +219,23 @@
             this.label4.Text = "Historial de Alquiler";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
+            // btnCerrarSesion
+            // 
+            this.btnCerrarSesion.Location = new System.Drawing.Point(666, 397);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(75, 23);
+            this.btnCerrarSesion.TabIndex = 16;
+            this.btnCerrarSesion.Text = "Cerrar Sesión";
+            this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnCerrarSesion);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -267,5 +279,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnCerrarSesion;
     }
 }

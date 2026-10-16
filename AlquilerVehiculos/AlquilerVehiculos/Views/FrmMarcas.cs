@@ -1,5 +1,6 @@
 ﻿using AlquilerVehiculos.Datos;
 using AlquilerVehiculos.Models;
+using AlquilerVehiculos.Utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -69,6 +70,16 @@ namespace AlquilerVehiculos
         {
             try
             {
+                if (!Validaciones.ValidarNoVacio(txtMarca.Text))
+                {
+                    MessageBox.Show("Debe ingresar un detalle en la marca");
+                    return;
+                }
+                if (!Validaciones.ValidarNoVacio(txtDescripcion.Text))
+                {
+                    MessageBox.Show("Debe ingresar una descripción de la marca");
+                    return;
+                }
                 Marca marca = new Marca();
                 marca.NombreMarca = txtMarca.Text;
                 marca.Descripcion = txtDescripcion.Text;

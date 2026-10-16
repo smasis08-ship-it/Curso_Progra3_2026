@@ -1,5 +1,6 @@
 ﻿using AlquilerVehiculos.Datos;
 using AlquilerVehiculos.Models;
+using AlquilerVehiculos.Utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -102,6 +103,26 @@ namespace AlquilerVehiculos
         {
             try
             {
+                if(!Validaciones.ValidarNoVacio(txtNombre.Text.Trim()))
+                {
+                    MessageBox.Show("Debe ingresar un nombre para el usuario");
+                    return;
+                }
+                if(!Validaciones.ValidarNoVacio(txtCorreo.Text.Trim()))
+                {
+                    MessageBox.Show("Debe ingresar un correo para el usuario");
+                    return;
+                }
+                if (!Validaciones.ValidarCorreo(txtCorreo.Text.Trim()))
+                {
+                    MessageBox.Show("Debe ingresar un correo con formato válido");
+                    return;
+                }
+                if (cbRoles.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Debe ingresar un rol para el usuario");
+                    return;
+                }
                 Usuario usuario = new Usuario();
                 usuario.Nombre = txtNombre.Text;
                 usuario.Correo = txtCorreo.Text;
@@ -113,6 +134,7 @@ namespace AlquilerVehiculos
                 {
                     MessageBox.Show("Usuario " + usuario.Nombre + " insertado correctamente");
                     CargarUsuarios();
+                    Limpiar();
                 }
                 else
                 {
@@ -130,6 +152,14 @@ namespace AlquilerVehiculos
         {
             FrmContraseñaUsuarios frmContraseñaUsuarios = new FrmContraseñaUsuarios();
             frmContraseñaUsuarios.Show();
+        }
+
+        public void Limpiar()
+        {
+            txtCorreo.Clear();
+            txtNombre.Clear();
+            cbRoles.SelectedIndex = -1;
+            cbkActivar.Checked = true;
         }
     }
 }
