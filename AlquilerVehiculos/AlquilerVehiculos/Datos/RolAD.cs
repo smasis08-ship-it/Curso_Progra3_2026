@@ -45,6 +45,65 @@ namespace AlquilerVehiculos.Datos
             return dt;
         }
 
+        //Obtener pantalla
+        public DataTable ObtenerPantallas()
+        {
+            DataTable dt = new DataTable();
+
+            try
+            {
+                using (SqlConnection cn = conexionDB.ObtenerConexion())
+                {
+                    cn.Open();
+
+                    using (SqlCommand cmd = new SqlCommand("PR_ObtenerPantallas", cn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                        {
+                            da.Fill(dt);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al obtener roles: " + ex.Message);
+            }
+
+            return dt;
+        }
+
+        public DataTable ObtenerPantallasxRol(int IdRol)
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection cn = conexionDB.ObtenerConexion())
+            {
+                using (SqlCommand cmd = new SqlCommand("PR_ObtenerPantallasxRol", cn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@IdRol", SqlDbType.Int, 100).Value = IdRol;
+
+                    cn.Open();
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                    {
+                        da.Fill(dt);
+                    }
+
+                    // Ejecuta el SP y obtiene el ID generado
+                    int idRol = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    return dt;
+                }
+            }
+        }
+
         // Insertar un rol
         public int Insertar(Rol rol)
         {
@@ -85,6 +144,50 @@ namespace AlquilerVehiculos.Datos
 
                     cn.Open();
                     cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        // Insertar un Pantalla Rol
+        public int InsertarPantallaRol(int pIdRol,int idPantalla)
+        {
+            using (SqlConnection cn = conexionDB.ObtenerConexion())
+            {
+                using (SqlCommand cmd = new SqlCommand("PR_InsertarPantallaRol", cn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@IdRol", SqlDbType.Int, 100).Value = pIdRol;
+                    cmd.Parameters.Add("@IdPantalla", SqlDbType.Int, 100).Value = idPantalla;
+
+                    cn.Open();
+
+                    // Ejecuta el SP y obtiene el ID generado
+                    int respuesta = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    return respuesta;
+                }
+            }
+        }
+
+        // Borrar un Pantalla Rol
+        public int BorrarPantallaRol(int pIdRol, int idPantalla)
+        {
+            using (SqlConnection cn = conexionDB.ObtenerConexion())
+            {
+                using (SqlCommand cmd = new SqlCommand("PR_InsertarPantallaRol", cn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@IdRol", SqlDbType.Int, 100).Value = pIdRol;
+                    cmd.Parameters.Add("@IdPantalla", SqlDbType.Int, 100).Value = idPantalla;
+
+                    cn.Open();
+
+                    // Ejecuta el SP y obtiene el ID generado
+                    int respuesta = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    return respuesta;
                 }
             }
         }

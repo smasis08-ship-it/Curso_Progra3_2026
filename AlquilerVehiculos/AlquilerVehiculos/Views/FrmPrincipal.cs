@@ -86,5 +86,38 @@ namespace AlquilerVehiculos
             frmLogin.Show();
             this.Hide();
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        private void panel2_Click(object sender, EventArgs e)
+        {
+            FrmBuscarVehiculo frmBuscarVehiculo = new FrmBuscarVehiculo();
+            frmBuscarVehiculo.Show();
+        }
+
+        private void panel3_Click(object sender, EventArgs e)
+        {
+            FrmReservas frmReservas = new FrmReservas();
+            frmReservas.Show();
+        }
+
+        private void panel4_Click(object sender, EventArgs e)
+        {
+            FrmHistorial frmHistorial = new FrmHistorial();
+            frmHistorial.Show();
+        }
     }
 }

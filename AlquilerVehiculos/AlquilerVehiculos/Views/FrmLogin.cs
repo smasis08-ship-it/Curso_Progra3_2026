@@ -168,5 +168,11 @@ namespace AlquilerVehiculos
             //Mostrar campos de password como texto
             txtPassword.UseSystemPasswordChar = !cbMostrarPassword.Checked;
         }
+
+        private void lblRegistro_Click(object sender, EventArgs e)
+        {
+            FrmRegistroUsuario frmRegistroUsuario = new FrmRegistroUsuario();
+            frmRegistroUsuario.ShowDialog();
+        }
     }
 }

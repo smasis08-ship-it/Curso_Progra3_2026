@@ -41,6 +41,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.cbMostrarPassword = new System.Windows.Forms.CheckBox();
+            this.lblRegistro = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -105,7 +106,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(342, 312);
+            this.button1.Location = new System.Drawing.Point(342, 306);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(207, 24);
             this.button1.TabIndex = 6;
@@ -149,6 +150,18 @@
             this.cbMostrarPassword.UseVisualStyleBackColor = true;
             this.cbMostrarPassword.CheckedChanged += new System.EventHandler(this.cbMostrarPassword_CheckedChanged);
             // 
+            // lblRegistro
+            // 
+            this.lblRegistro.AutoSize = true;
+            this.lblRegistro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblRegistro.ForeColor = System.Drawing.Color.Navy;
+            this.lblRegistro.Location = new System.Drawing.Point(403, 344);
+            this.lblRegistro.Name = "lblRegistro";
+            this.lblRegistro.Size = new System.Drawing.Size(85, 13);
+            this.lblRegistro.TabIndex = 11;
+            this.lblRegistro.Text = "Registrarse aquí";
+            this.lblRegistro.Click += new System.EventHandler(this.lblRegistro_Click);
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -156,6 +169,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(574, 388);
+            this.Controls.Add(this.lblRegistro);
             this.Controls.Add(this.cbMostrarPassword);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -189,6 +203,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.CheckBox cbMostrarPassword;
+        private System.Windows.Forms.Label lblRegistro;
     }
 }
 
