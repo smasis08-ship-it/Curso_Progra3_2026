@@ -62,7 +62,11 @@ namespace AlquilerVehiculos.Datos
                                 Modelo = dr["Modelo"].ToString(),
                                 Placa = dr["Placa"].ToString(),
                                 PrecioDia = Convert.ToDecimal(dr["PrecioDia"]),
-                                Estado = Convert.ToBoolean(dr["Estado"])
+                                // en la tabla la columna se llama Activo, con "Estado" se caia
+                                Estado = Convert.ToBoolean(dr["Activo"]),
+                                Annio = dr["Annio"] == DBNull.Value ? (int?)null : Convert.ToInt32(dr["Annio"]),
+                                IdClasificacion = dr["IdClasificacion"] == DBNull.Value
+                                    ? (int?)null : Convert.ToInt32(dr["IdClasificacion"])
                             };
                         }
                     }
@@ -85,11 +89,12 @@ namespace AlquilerVehiculos.Datos
                     cmd.Parameters.Add("@MarcaId", SqlDbType.Int)
                         .Value = vehiculo.MarcaId;
 
+                    // si vienen vacios se manda DBNull, si se manda null el parametro ni se envia
                     cmd.Parameters.Add("@IdClasificacion", SqlDbType.Int)
-                        .Value = vehiculo.IdClasificacion;
+                        .Value = (object)vehiculo.IdClasificacion ?? DBNull.Value;
 
                     cmd.Parameters.Add("@Annio", SqlDbType.Int)
-                        .Value = vehiculo.Annio;
+                        .Value = (object)vehiculo.Annio ?? DBNull.Value;
 
                     cmd.Parameters.Add("@Modelo", SqlDbType.VarChar, 100)
                         .Value = vehiculo.Modelo;
@@ -103,7 +108,8 @@ namespace AlquilerVehiculos.Datos
                     cmd.Parameters["@PrecioDia"].Precision = 18;
                     cmd.Parameters["@PrecioDia"].Scale = 2;
 
-                    cmd.Parameters.Add("@Estado", SqlDbType.VarChar, 30)
+                    // en la base Activo es bit, entonces se manda como bit y no como texto
+                    cmd.Parameters.Add("@Estado", SqlDbType.Bit)
                         .Value = vehiculo.Estado;
 
                     cn.Open();
@@ -141,11 +147,37 @@ namespace AlquilerVehiculos.Datos
                     cmd.Parameters["@PrecioDia"].Precision = 18;
                     cmd.Parameters["@PrecioDia"].Scale = 2;
 
-                    cmd.Parameters.Add("@Estado", SqlDbType.VarChar, 30)
+                    cmd.Parameters.Add("@Estado", SqlDbType.Bit)
                         .Value = vehiculo.Estado;
+
+                    // antes no se mandaban y el SP pide la clasificacion, por eso fallaba al actualizar
+                    cmd.Parameters.Add("@Annio", SqlDbType.Int)
+                        .Value = (object)vehiculo.Annio ?? DBNull.Value;
+
+                    cmd.Parameters.Add("@IdClasificacion", SqlDbType.Int)
+                        .Value = (object)vehiculo.IdClasificacion ?? DBNull.Value;
 
                     cn.Open();
 
+                    return Convert.ToInt32(cmd.ExecuteScalar());
+                }
+            }
+        }
+
+        // disponible / alquilado / mantenimiento
+        // si el carro tiene un alquiler activo el SP no deja cambiarlo
+        public int CambiarEstado(int idVehiculo, string estadoVehiculo)
+        {
+            using (SqlConnection cn = conexionDB.ObtenerConexion())
+            {
+                using (SqlCommand cmd = new SqlCommand("PR_CambiarEstadoVehiculo", cn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@IdVehiculo", SqlDbType.Int).Value = idVehiculo;
+                    cmd.Parameters.Add("@EstadoVehiculo", SqlDbType.VarChar, 20).Value = estadoVehiculo;
+
+                    cn.Open();
                     return Convert.ToInt32(cmd.ExecuteScalar());
                 }
             }
@@ -172,7 +204,8 @@ namespace AlquilerVehiculos.Datos
         }
 
         // Obtener únicamente los vehículos disponibles
-        public DataTable ObtenerDisponibles()
+        // los filtros son opcionales, si vienen null se traen todos los tipos / marcas
+        public DataTable ObtenerDisponibles(int? idClasificacion = null, int? idMarca = null)
         {
             DataTable dt = new DataTable();
 
@@ -182,6 +215,9 @@ namespace AlquilerVehiculos.Datos
                     "PR_ObtenerVehiculosDisponibles", cn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@IdClasificacion", SqlDbType.Int).Value = (object)idClasificacion ?? DBNull.Value;
+                    cmd.Parameters.Add("@IdMarca", SqlDbType.Int).Value = (object)idMarca ?? DBNull.Value;
 
                     using (SqlDataAdapter da = new SqlDataAdapter(cmd))
                     {

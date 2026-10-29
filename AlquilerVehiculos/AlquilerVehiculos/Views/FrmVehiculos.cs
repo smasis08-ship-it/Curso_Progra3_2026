@@ -17,7 +17,9 @@ namespace AlquilerVehiculos
     {
         MarcaAD marcaAD = new MarcaAD();
         VehiculoAD vehiculoAD = new VehiculoAD();
+        ClasificacionVehiculoAD clasificacionAD = new ClasificacionVehiculoAD();
         List<Marca> lMarcas = new List<Marca>();
+        List<ClasificacionVehiculo> lClasificaciones = new List<ClasificacionVehiculo>();
         public FrmVehiculos()
         {
             InitializeComponent();
@@ -36,6 +38,17 @@ namespace AlquilerVehiculos
 
                 // No seleccionar ninguna marca inicialmente
                 cbMarcas.SelectedIndex = -1;
+
+                // el tipo de vehiculo (sedan, suv...) sale de la tabla de clasificaciones
+                CargarClasificaciones();
+                cbClasificacion.DisplayMember = "Nombre";
+                cbClasificacion.ValueMember = "IdClasificacion";
+                cbClasificacion.DataSource = lClasificaciones;
+                cbClasificacion.SelectedIndex = -1;
+
+                // el año arranca en el actual para no tener que subirlo desde 1990
+                nudAnnio.Maximum = DateTime.Now.Year + 1;
+                nudAnnio.Value = DateTime.Now.Year;
             }
             catch (Exception ex)
             {
@@ -74,6 +87,20 @@ namespace AlquilerVehiculos
                 .ToList();
         }
 
+        private void CargarClasificaciones()
+        {
+            // solo las clasificaciones activas, las desactivadas no deberian salir para escoger
+            DataTable dt = clasificacionAD.ObtenerClasificaciones();
+            lClasificaciones = dt.AsEnumerable()
+                .Where(fila => Convert.ToBoolean(fila["Estado"]))
+                .Select(fila => new ClasificacionVehiculo
+                {
+                    IdClasificacion = Convert.ToInt32(fila["IdClasificacion"]),
+                    Nombre = fila["Nombre"].ToString()
+                })
+                .ToList();
+        }
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -103,7 +130,9 @@ namespace AlquilerVehiculos
                     MessageBox.Show("Debe ingresar una placa para el vehículo");
                     return;
                 }
-                if(Validaciones.ValidarMonto(txtModelo.Text))
+                // ojo aca hay que validar el precio y no el modelo, antes estaba al reves
+                // y si el precio venia vacio se caia en el Convert de abajo
+                if(!Validaciones.ValidarMonto(txtPrecioDia.Text))
                 {
                     MessageBox.Show("Debe ingresar una precio válido para el alquiler vehículo");
                     return;
@@ -113,12 +142,19 @@ namespace AlquilerVehiculos
                     MessageBox.Show("Debe ingresar una marca para vehículo");
                     return;
                 }
+                if(cbClasificacion.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Debe escoger el tipo de vehículo");
+                    return;
+                }
 
                 Vehiculo vehiculo = new Vehiculo();
-                vehiculo.Modelo = txtModelo.Text;
-                vehiculo.Placa = txtPlaca.Text;
+                vehiculo.Modelo = txtModelo.Text.Trim();
+                vehiculo.Placa = txtPlaca.Text.Trim().ToUpper();
                 vehiculo.PrecioDia = Convert.ToDecimal(txtPrecioDia.Text);
                 vehiculo.MarcaId = int.Parse(cbMarcas.SelectedValue.ToString());
+                vehiculo.Annio = (int)nudAnnio.Value;
+                vehiculo.IdClasificacion = int.Parse(cbClasificacion.SelectedValue.ToString());
                 vehiculo.Estado = cbkActivar.Checked;
 
                 bool resultado = false;
@@ -134,6 +170,41 @@ namespace AlquilerVehiculos
                     MessageBox.Show("Error al insertar el vehiculo " + vehiculo.Modelo);
                 }
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.Message);
+            }
+        }
+
+        // para mandar un carro a mantenimiento o sacarlo de ahi
+        // "Alquilado" no se pone a mano, eso lo hace el sistema al aprobar un alquiler
+        private void btnCambiarEstado_Click(object sender, EventArgs e)
+        {
+            if (dgvMarca.CurrentRow == null)
+            {
+                MessageBox.Show("Debe escoger un vehículo de la lista");
+                return;
+            }
+            if (cbEstadoVehiculo.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe escoger el estado");
+                return;
+            }
+
+            int idVehiculo = Convert.ToInt32(dgvMarca.CurrentRow.Cells["IdVehiculo"].Value);
+
+            try
+            {
+                vehiculoAD.CambiarEstado(idVehiculo, cbEstadoVehiculo.Text);
+                MessageBox.Show("Estado del vehículo actualizado a " + cbEstadoVehiculo.Text);
+                cbEstadoVehiculo.SelectedIndex = -1;
+                CargarVehiculos();
+            }
+            catch (System.Data.SqlClient.SqlException ex) when (ex.Number == AlquilerAD.ErrorRegla)
+            {
+                // si el carro esta alquilado no se deja cambiar
+                MessageBox.Show(ex.Message, "No se pudo cambiar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch (Exception ex)
             {
@@ -162,6 +233,8 @@ namespace AlquilerVehiculos
             txtPlaca.Clear();
             txtPrecioDia.Clear();
             cbMarcas.SelectedIndex = -1;
+            cbClasificacion.SelectedIndex = -1;
+            nudAnnio.Value = DateTime.Now.Year;
             cbkActivar.Checked = true;
         }
     }

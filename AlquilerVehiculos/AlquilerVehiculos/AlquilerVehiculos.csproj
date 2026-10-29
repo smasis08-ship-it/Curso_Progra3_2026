@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Datos\AlquilerAD.cs" />
     <Compile Include="Datos\ClasificacionVehiculoAD.cs" />
     <Compile Include="Datos\LoginDatos.cs" />
     <Compile Include="Datos\MarcaAD.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="Models\Master.cs" />
     <Compile Include="Models\Marca.cs" />
     <Compile Include="Models\SesionUsuario.cs" />
+    <Compile Include="Utilities\FormatoGrid.cs" />
     <Compile Include="Utilities\Validaciones.cs" />
     <Compile Include="Views\FrmHistorial.cs">
       <SubType>Form</SubType>
@@ -105,6 +107,30 @@
     </Compile>
     <Compile Include="Views\FrmVehiculos.Designer.cs">
       <DependentUpon>FrmVehiculos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmSolicitudes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmSolicitudes.Designer.cs">
+      <DependentUpon>FrmSolicitudes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmDevoluciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmDevoluciones.Designer.cs">
+      <DependentUpon>FrmDevoluciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmPagos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmPagos.Designer.cs">
+      <DependentUpon>FrmPagos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmReportes.Designer.cs">
+      <DependentUpon>FrmReportes.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FrmRoles.cs">
       <SubType>Form</SubType>

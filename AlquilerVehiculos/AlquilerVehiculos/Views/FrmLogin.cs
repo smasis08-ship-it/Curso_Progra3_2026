@@ -86,7 +86,8 @@ namespace AlquilerVehiculos
 
                         frmPrincipal.Show();
                         this.Hide();
-                        SesionUsuario.CerrarSesion();
+                        // aca antes se cerraba la sesion y el cliente quedaba adentro pero sin datos,
+                        // la sesion solo se debe cerrar con el boton de Cerrar Sesion
                     }
                     else
                     {

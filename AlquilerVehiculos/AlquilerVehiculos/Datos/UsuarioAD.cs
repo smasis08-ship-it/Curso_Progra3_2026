@@ -59,6 +59,29 @@ namespace AlquilerVehiculos.Datos
             }
         }
 
+        // insertar el usuario ya con su contraseña, todo de una vez
+        // asi no queda un usuario creado sin clave si algo falla a la mitad
+        public int Insertar(Usuario usuario, byte[] passwordHash, byte[] passwordSalt)
+        {
+            using (SqlConnection cn = conexionDB.ObtenerConexion())
+            {
+                using (SqlCommand cmd = new SqlCommand("PR_InsertarUsuario", cn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@Nombre", SqlDbType.VarChar, 100).Value = usuario.Nombre;
+                    cmd.Parameters.Add("@Correo", SqlDbType.VarChar, 150).Value = usuario.Correo;
+                    cmd.Parameters.Add("@IdRol", SqlDbType.Int).Value = usuario.IdRol;
+                    cmd.Parameters.Add("@PasswordHash", SqlDbType.VarBinary, 32).Value = passwordHash;
+                    cmd.Parameters.Add("@PasswordSalt", SqlDbType.VarBinary, 16).Value = passwordSalt;
+
+                    cn.Open();
+
+                    return Convert.ToInt32(cmd.ExecuteScalar());
+                }
+            }
+        }
+
         // Actualizar usuario
         public void Actualizar(Usuario usuario)
         {

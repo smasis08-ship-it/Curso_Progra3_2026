@@ -1,4 +1,5 @@
-﻿using AlquilerVehiculos.Models;
+﻿using AlquilerVehiculos.Datos;
+using AlquilerVehiculos.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,18 +19,91 @@ namespace AlquilerVehiculos
             InitializeComponent();
         }
 
+        RolAD rolAD = new RolAD();
+
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
             lblBienvenido.Text = "Bienvenido " + SesionUsuario.Nombre;
+
+            try
+            {
+                AplicarPermisos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar los permisos: " + ex.Message);
+            }
+        }
+
+        // lo que se ve en el menu depende de las pantallas que tenga marcadas el rol (FrmPantallas)
+        // se usa Available y no Visible porque Visible da false mientras el menu esta cerrado
+        private void AplicarPermisos()
+        {
+            // el admin ve todo, a el no se le configuran permisos
             if (SesionUsuario.IdRol == 1)
             {
-                menuAdmin.Visible = true;
+                menuAdmin.Available = true;
+                return;
             }
 
-            else
-            { 
-                menuAdmin.Visible = false; 
-            }
+            HashSet<string> permitidas = new HashSet<string>(
+                rolAD.ObtenerPantallasxRol(SesionUsuario.IdRol).AsEnumerable()
+                    .Select(fila => fila["Nombre"].ToString()));
+
+            // cada opcion con el mismo nombre que tiene en la tabla Pantallas
+            usuariosToolStripMenuItem.Available = permitidas.Contains("Usuarios");
+            rolesToolStripMenuItem1.Available = permitidas.Contains("Roles");
+            clasificaciónToolStripMenuItem.Available = permitidas.Contains("Clasificación de vehículos");
+            vehiculosToolStripMenuItem1.Available = permitidas.Contains("Vehículos");
+            marcasToolStripMenuItem.Available = permitidas.Contains("Marcas");
+            solicitudesToolStripMenuItem.Available = permitidas.Contains("Solicitudes de alquiler");
+            devolucionesToolStripMenuItem.Available = permitidas.Contains("Devoluciones");
+            pagosToolStripMenuItem.Available = permitidas.Contains("Pagos");
+            reportesToolStripMenuItem.Available = permitidas.Contains("Reportes");
+
+            // los submenus solo salen si tienen algo adentro
+            rolesToolStripMenuItem.Available = usuariosToolStripMenuItem.Available || rolesToolStripMenuItem1.Available;
+            vehiculosToolStripMenuItem.Available = clasificaciónToolStripMenuItem.Available
+                || vehiculosToolStripMenuItem1.Available || marcasToolStripMenuItem.Available;
+            alquileresToolStripMenuItem.Available = solicitudesToolStripMenuItem.Available
+                || devolucionesToolStripMenuItem.Available || pagosToolStripMenuItem.Available;
+            menuAdmin.Available = rolesToolStripMenuItem.Available || vehiculosToolStripMenuItem.Available
+                || alquileresToolStripMenuItem.Available || reportesToolStripMenuItem.Available;
+
+            // las 3 opciones grandes de la pantalla principal (las del cliente)
+            MostrarOpcion(panel2, label2, permitidas.Contains("Buscar vehículo"));
+            MostrarOpcion(panel3, label3, permitidas.Contains("Reservas"));
+            MostrarOpcion(panel4, label4, permitidas.Contains("Historial de alquiler"));
+        }
+
+        private void MostrarOpcion(Panel icono, Label texto, bool permitido)
+        {
+            icono.Visible = permitido;
+            texto.Visible = permitido;
+        }
+
+        private void solicitudesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmSolicitudes frmSolicitudes = new FrmSolicitudes();
+            frmSolicitudes.Show();
+        }
+
+        private void devolucionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmDevoluciones frmDevoluciones = new FrmDevoluciones();
+            frmDevoluciones.Show();
+        }
+
+        private void pagosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmPagos frmPagos = new FrmPagos();
+            frmPagos.Show();
+        }
+
+        private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmReportes frmReportes = new FrmReportes();
+            frmReportes.Show();
         }
 
         private void label1_Click(object sender, EventArgs e)

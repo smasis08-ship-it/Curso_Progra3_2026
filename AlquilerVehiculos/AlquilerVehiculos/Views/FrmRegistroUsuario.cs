@@ -79,37 +79,43 @@ namespace AlquilerVehiculos
                     return;
                 }
 
+                // antes dejaba crear la cuenta sin contraseña, pedimos minimo 6 caracteres
+                if (txtPassword.Text.Length < 6)
+                {
+                    MessageBox.Show("La contraseña debe tener al menos 6 caracteres");
+                    return;
+                }
+
                 Usuario usuario = new Usuario();
-                usuario.Nombre = txtNombre.Text;
-                usuario.Correo = txtCorreo.Text;
-                usuario.IdRol = 2;
+                usuario.Nombre = txtNombre.Text.Trim();
+                usuario.Correo = txtCorreo.Text.Trim();
+                usuario.IdRol = 2; // todo el que se registra desde el login entra como cliente
                 usuario.FechaCreacion = DateTime.Now;
 
-                int resultado = 0;
-                resultado = usuarioAD.Insertar(usuario);
+                // primero sacamos el hash y despues se guarda todo junto,
+                // antes se creaba el usuario y luego la clave, y si fallaba quedaba un usuario sin clave
+                Seguridad seguridad = new Seguridad();
+                byte[] hash = null;
+                byte[] salt = null;
+                seguridad.CrearHash(txtPassword.Text, out hash, out salt);
+
+                int resultado = usuarioAD.Insertar(usuario, hash, salt);
                 if (resultado > 0)
                 {
-                    Seguridad seguridad = new Seguridad();
-                    byte[] hash = null;
-                    byte[] salt = null;
-                    seguridad.CrearHash(txtPassword.Text, out hash, out salt);
-                    var respuesta = usuarioAD.AsignarPassword(resultado, hash, salt);
-                    if (respuesta > 0)
-                    {
-                        MessageBox.Show("Usuario " + usuario.Nombre + " insertado correctamente");
-                        this.Close();
-                        Limpiar();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error al insertar el usuario " + usuario.Nombre);
-                    }
+                    MessageBox.Show("Usuario " + usuario.Nombre + " registrado correctamente, ya puede iniciar sesión");
+                    Limpiar();
+                    this.Close();
                 }
                 else
                 {
                     MessageBox.Show("Error al insertar el usuario " + usuario.Nombre);
                 }
 
+            }
+            catch (System.Data.SqlClient.SqlException ex) when (ex.Number == 2627 || ex.Number == 2601)
+            {
+                // el correo es unico en la base, si ya existe sql tira este error
+                MessageBox.Show("Ya existe una cuenta con ese correo");
             }
             catch (Exception ex)
             {

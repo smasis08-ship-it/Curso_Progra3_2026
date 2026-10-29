@@ -69,7 +69,7 @@ namespace AlquilerVehiculos.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al obtener roles: " + ex.Message);
+                MessageBox.Show("Error al obtener pantallas: " + ex.Message);
             }
 
             return dt;
@@ -85,19 +85,13 @@ namespace AlquilerVehiculos.Datos
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add("@IdRol", SqlDbType.Int, 100).Value = IdRol;
+                    cmd.Parameters.Add("@IdRol", SqlDbType.Int).Value = IdRol;
 
-                    cn.Open();
-
-                    cmd.CommandType = CommandType.StoredProcedure;
-
+                    // con el Fill ya se trae todo, antes se volvia a ejecutar el SP con un ExecuteScalar que no servia
                     using (SqlDataAdapter da = new SqlDataAdapter(cmd))
                     {
                         da.Fill(dt);
                     }
-
-                    // Ejecuta el SP y obtiene el ID generado
-                    int idRol = Convert.ToInt32(cmd.ExecuteScalar());
 
                     return dt;
                 }
@@ -175,7 +169,8 @@ namespace AlquilerVehiculos.Datos
         {
             using (SqlConnection cn = conexionDB.ObtenerConexion())
             {
-                using (SqlCommand cmd = new SqlCommand("PR_InsertarPantallaRol", cn))
+                // estaba llamando al de insertar, entonces al desmarcar la pantalla se volvia a meter
+                using (SqlCommand cmd = new SqlCommand("PR_EliminarPantallaRol", cn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
